@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 94598201}
   - component: {fileID: 94598200}
   - component: {fileID: 94598203}
+  - component: {fileID: 94598204}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -320,6 +321,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 717688262}
+--- !u!114 &94598204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94598199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7415cd1a5d6341b459dd8f826e9b90bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 8933698716678964135, guid: 9e44b2119bd2fc6448946bbeb71bd523, type: 3}
+  crosshair: {fileID: 114242925872239870, guid: 36d6dcac58d5e4b47b15c911c0967c2a, type: 3}
+  gunRecoil: 0
+  settleSpeed: 0
+  shotsPerSecond: 5
+  playercamera: {fileID: 94598201}
 --- !u!1 &363210411
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,18 +590,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &717688269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717688262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a113ad305525ac409e2a26c3192050b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1364554915
 PrefabInstance:
   m_ObjectHideFlags: 0

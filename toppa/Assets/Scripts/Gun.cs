@@ -48,7 +48,7 @@ namespace HELLSLAYERCrosshairs
                 actualbullet.name = "Bullet" + index;
                 actualbullet.transform.parent = this.transform;
                 actualbullet.transform.localPosition = new Vector3(0,0,(float)0.5);
-                actualbullet.transform.rotation = playercamera.transform.rotation;
+                // actualbullet.transform.rotation = playercamera.transform.rotation;
                 actualbullet.transform.DetachChildren();
                 actualbullet.GetComponent<Rigidbody>().AddForce( this.transform.forward * BullentSpeed);
                 Destroy(actualbullet, 2f);
