@@ -31,7 +31,7 @@ public class DashBoard : MonoBehaviour
 
     #region Play Button Methods
     public void PlayArena() {
-        SceneManager.LoadScene("Arena");
+        SceneManager.LoadScene("Midterm Review");
     }
     #endregion
 

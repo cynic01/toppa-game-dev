@@ -24,14 +24,14 @@ public class PlayerHealth : MonoBehaviour
     #endregion
 
 
-    // The GameObject to be spawned
-    public GameObject go;
+    // // The GameObject to be spawned
+    // public GameObject go;
     // Start is called before the first frame update
     void Start () {
         Debug.Log("Start Called"); 
-        p_CurHealth = 1000 ; // Temporary Amount to edit later
-        healthBar.setHealth(p_CurHealth);
+        p_CurHealth = m_PlayerMaxHealth;
         healthBar.setMaxHealth(m_PlayerMaxHealth);
+        healthBar.setHealth(p_CurHealth);
     }
 
     void Update()

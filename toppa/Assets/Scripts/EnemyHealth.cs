@@ -22,8 +22,8 @@ public class EnemyHealth : MonoBehaviour
         #endregion
 
 
-        // The GameObject to be spawned
-        public GameObject go;
+        // // The GameObject to be spawned
+        // public GameObject go;
         // Start is called before the first frame update
         void Start()
         {
@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
             //rb.UpdateHealth(1.0f * p_CurHealth / m_MaxHealth); // After incorpotating UpdateHealth method
             if (p_CurHealth == 0) {
                 //Enemy Death effects
+                Destroy(gameObject);
             }
         }
         #endregion
