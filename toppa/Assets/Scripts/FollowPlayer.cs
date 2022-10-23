@@ -6,17 +6,21 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        // transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-        // transform.position = new Vector3(0f, 0f, 0f);
+
+    [SerializeField]
+    private Vector3 offset;
+
+    private Vector3 rotation_store;
+
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x + 0.5f, player.transform.position.y + 1.6f, player.transform.position.z - 2f);
+        transform.position = player.transform.position + offset;
+        transform.RotateAround(player.transform.position, Vector3.up, Input.GetAxis("Mouse X"));
+        transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0, Space.Self);
+        offset = transform.position - player.transform.position;
     }
 }
