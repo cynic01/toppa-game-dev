@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.space)) {
         //     DecreaseHealth(50);
         // }
-        DecreaseHealth(600);
+        // DecreaseHealth(600);
     }
 
 
