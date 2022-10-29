@@ -35,7 +35,8 @@ namespace HELLSLAYERCrosshairs
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0)) // press the mouse1 / left control / controller button 1 to simulate shooting with the given recoil
+            if (Input.GetButton("Fire1")) // press the mouse1 / left control / controller button 1 to simulate shooting with the given recoil
+            //Input.GetKeyDown(KeyCode.Mouse0)
                 Shoot();
         }
 
