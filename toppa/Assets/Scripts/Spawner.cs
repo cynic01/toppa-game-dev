@@ -24,8 +24,8 @@ public class Spawner : MonoBehaviour
         CreateTime -= Time.deltaTime;
         // Spawn an object in the given space
         if (CreateTime <= 0) {
-            GameObject go2 = Instantiate(go, new Vector3(Random.Range(0f, 10f), 0, Random.Range(0f, 10f)), Quaternion.identity);
-            CreateTime = Random.Range(3, 10);
+            GameObject go2 = Instantiate(go, new Vector3(Random.Range(0f, 10f), -1, Random.Range(0f, 10f)), Quaternion.identity);
+            CreateTime = Random.Range(2, 5);
             enemyCount--;
         }
     }
