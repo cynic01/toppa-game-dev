@@ -39,10 +39,9 @@ public class BasicMovements :  MonoBehaviour
         Velocity = Vector3.zero;
     }
     // Update is called once per frame
-    void Update()
-    {   
-        heading += Input.GetAxis("Mouse X") * Time.fixedDeltaTime;
-        transform.rotation = Quaternion.Euler(0, heading, 0);
+    void Update() {
+        // heading += Input.GetAxis("Mouse X") * Time.fixedDeltaTime;
+        // transform.rotation = Quaternion.Euler(0, heading, 0);
         
         float p_verticalSpeedController = Input.GetAxis("Vertical");
         float p_horizontalSpeedController = Input.GetAxis("Horizontal");
