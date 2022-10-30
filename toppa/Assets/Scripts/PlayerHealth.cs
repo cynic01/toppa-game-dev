@@ -55,11 +55,14 @@ public class PlayerHealth : MonoBehaviour
     #region Regeneration/Damage Response Methods
 
     public void DecreaseHealth(float amount) {
-        p_CurHealth = Mathf.Max(0, m_PlayerMaxHealth - amount);
+        p_CurHealth = Mathf.Max(0, p_CurHealth - amount);
         healthBar.setHealth(p_CurHealth);
+        Debug.Log(p_CurHealth);
         //rb.UpdateHealth(1.0f * p_CurHealth / m_PlayerMaxHealth); // After incorpotating UpdateHealth method
         if (p_CurHealth == 0) {
             //Signals Death & goes back to main menu (UI?)
+            Debug.Log("Player died");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 

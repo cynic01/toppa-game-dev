@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49440be02cec43f29db9ea5e2aede45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 200
+  m_speed: 10
   MouseSensitivity: 0
   Camera: {fileID: 94598199}
 --- !u!54 &717688266
@@ -907,8 +907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 3775473976629099060, guid: a00f95e1d0ccadf40977a6a2e57e3c31, type: 3}
-  CreateTime: 3
-  enemyCount: 5
+  CreateTime: 2
+  enemyCount: 100
 --- !u!4 &1902838212
 Transform:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ public class BasicMovements :  MonoBehaviour
         camR.y = 0;
         camF = camF.normalized;
         camR = camR.normalized;
-        transform.position += camF * p_verticalSpeedController / 10 + camR * p_horizontalSpeedController / 10;
+        transform.position += m_speed * Time.deltaTime * (camF * p_verticalSpeedController + camR * p_horizontalSpeedController);
         
         Vector3 MovementDirection = camF;
         
@@ -68,14 +68,11 @@ public class BasicMovements :  MonoBehaviour
         if (MovementDirection != Vector3.zero) {
             transform.forward = MovementDirection;
         }
-        //transform.position += new Vector3(Velocity.x, 0, Velocity.y) * Time.fixedDeltaTime*5;
-        
     }
 
     void FixedUpdate () {
         // Debug.Log("m_speed is" + m_speed + " and DeltaTime is" + Time.fixedDeltaTime);
         // Debug.Log(Velocity.magnitude + " is the magnitude of velocity");
-        //Rb.velocity = Velocity * m_speed * Time.fixedDeltaTime * Velocity.magnitude;     
-        
+        // Rb.velocity = Velocity * m_speed * Time.fixedDeltaTime * Velocity.magnitude;
     }
 }
