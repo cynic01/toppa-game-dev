@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // The GameObject to be spawned
-    public GameObject go;
-    // Track the total number of enemies
-    public int enenmyCount = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField]
+    [Tooltip("The GameObject to be spawned")]
+    private GameObject go;
 
-    }
-    // The time before first enemy is spawned
-    private float CreateTime = 3f;
+    [SerializeField]
+    [Tooltip("The time before first enemy is spawned")]
+    private float CreateTime;
+
+    [SerializeField]
+    [Tooltip("The total number of enemies to spawn")]
+    private int enemyCount;
+    
     // Update is called once per frame
     void Update()
     {
+        if (enemyCount <= 0) return;
         // Count down
         CreateTime -= Time.deltaTime;
         // Spawn an object in the given space
-        if  (CreateTime <= 0 && enenmyCount < 4) {
-            GameObject go2 = Instantiate(go, new Vector3(Random.Range(0f,10f), 0, Random.Range(0f,10f)), Quaternion.identity);
-            CreateTime = Random.Range(3,10);
-            enenmyCount += 1;
-        }   
+        if (CreateTime <= 0) {
+            GameObject go2 = Instantiate(go, new Vector3(Random.Range(0f, 10f), 0, Random.Range(0f, 10f)), Quaternion.identity);
+            CreateTime = Random.Range(3, 10);
+            enemyCount--;
+        }
     }
 }

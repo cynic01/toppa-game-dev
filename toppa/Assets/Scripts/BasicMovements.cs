@@ -13,20 +13,22 @@ public class BasicMovements :  MonoBehaviour
 
     [SerializeField]
     private GameObject Camera;
-    
+
     #region Private Variables
     private Vector2 Velocity;
     #endregion
     
     #region Cached Components
     private Rigidbody Rb;
+    private Animator anim;
     #endregion
     private float heading = 0f;
 
     void Awake () {
         Debug.Log("Awaked");
         Velocity = Vector3.zero;
-        Rb = GetComponent<Rigidbody>(); 
+        Rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     void Start () {
@@ -39,13 +41,18 @@ public class BasicMovements :  MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        heading += Input.GetAxis("Mouse X")*Time.fixedDeltaTime;
+        heading += Input.GetAxis("Mouse X") * Time.fixedDeltaTime;
         transform.rotation = Quaternion.Euler(0, heading, 0);
         
         float p_verticalSpeedController = Input.GetAxis("Vertical");
         float p_horizontalSpeedController = Input.GetAxis("Horizontal");
         Velocity.Set(p_horizontalSpeedController, p_verticalSpeedController);
         Velocity = Vector2.ClampMagnitude(Velocity, 1);
+        if (Velocity.magnitude >= 0.1) {
+            anim.SetBool("running", true);
+        } else {
+            anim.SetBool("running", false);
+        }
         
         Vector3 camF = Camera.transform.forward;
         Vector3 camR = Camera.transform.right;
@@ -54,7 +61,7 @@ public class BasicMovements :  MonoBehaviour
         camR.y = 0;
         camF = camF.normalized;
         camR = camR.normalized;
-        transform.position += camF * p_verticalSpeedController/10 + camR * p_horizontalSpeedController/10;
+        transform.position += camF * p_verticalSpeedController / 10 + camR * p_horizontalSpeedController / 10;
         
         Vector3 MovementDirection = camF;
         

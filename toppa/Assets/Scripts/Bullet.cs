@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Enemy") {
-            // Debug.Log("Hit Enemy");
+            Debug.Log("Hit Enemy");
             collision.gameObject.GetComponent<EnemyHealth>().DecreaseHealth(damage);
         } else if (collision.gameObject.tag == "Player") {
             Debug.Log("Hit Player");

@@ -10,8 +10,6 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField]
     private Vector3 offset;
 
-    private Vector3 rotation_store;
-
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }

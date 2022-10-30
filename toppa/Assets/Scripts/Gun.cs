@@ -7,12 +7,12 @@ namespace HELLSLAYERCrosshairs
     public class Gun : MonoBehaviour
     {
         public GameObject Bullet;
-        public Crosshair crosshair; //put the UI crosshair object into this field in the inspector
+        public Crosshair crosshair; // put the UI crosshair object into this field in the inspector
         public float gunRecoil;
         public float settleSpeed;
         public float shotsPerSecond; //how fast this gun shoots
         private int index; // The index of bullets
-        private int BullentSpeed = 800;
+        private int BulletSpeed = 800;
         public Camera playercamera;
 
 
@@ -44,14 +44,14 @@ namespace HELLSLAYERCrosshairs
         {
             if (nextShotTime < Time.time) {
                 // Fire the bullet
-                index ++;
+                index++;
                 GameObject actualbullet = Instantiate(Bullet);
                 actualbullet.name = "Bullet" + index;
                 actualbullet.transform.parent = this.transform;
                 actualbullet.transform.localPosition = new Vector3(0,0,(float)0.5);
                 // actualbullet.transform.rotation = playercamera.transform.rotation;
                 actualbullet.transform.DetachChildren();
-                actualbullet.GetComponent<Rigidbody>().AddForce( this.transform.forward * BullentSpeed);
+                actualbullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * BulletSpeed);
                 Destroy(actualbullet, 2f);
                 // Modify the Crosshair
                 crosshair.Expand(gunRecoil);
