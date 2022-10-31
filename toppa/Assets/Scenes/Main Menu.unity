@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2763439, g: 0.36407518, b: 0.509434, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -349,6 +349,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 918411131371814655, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.36311856
+      objectReference: {fileID: 0}
+    - target: {fileID: 918411131371814655, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 918411131371814655, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5232128
+      objectReference: {fileID: 0}
     - target: {fileID: 918411131384542214, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -364,6 +376,18 @@ PrefabInstance:
     - target: {fileID: 918411131384542214, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DashBoard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 918411131384542329, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.34825563
+      objectReference: {fileID: 0}
+    - target: {fileID: 918411131384542329, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34825563
+      objectReference: {fileID: 0}
+    - target: {fileID: 918411131384542329, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8113208
       objectReference: {fileID: 0}
     - target: {fileID: 8608386647524816374, guid: 2ba354bfaf14443258295eb5babb77f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
