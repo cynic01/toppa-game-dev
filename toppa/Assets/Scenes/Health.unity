@@ -857,7 +857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerMaxHealth: 1000
-  cam: {fileID: 0}
   healthBar: {fileID: 1194300974}
   p_CurHealth: 0
   go: {fileID: 0}
