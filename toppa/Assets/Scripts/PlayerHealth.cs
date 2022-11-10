@@ -24,14 +24,14 @@ public class PlayerHealth : MonoBehaviour
     #endregion
 
 
-    // The GameObject to be spawned
-    public GameObject go;
+    // // The GameObject to be spawned
+    // public GameObject go;
     // Start is called before the first frame update
     void Start () {
         Debug.Log("Start Called"); 
-        p_CurHealth = 1000 ; // Temporary Amount to edit later
-        healthBar.setHealth(p_CurHealth);
+        p_CurHealth = m_PlayerMaxHealth;
         healthBar.setMaxHealth(m_PlayerMaxHealth);
+        healthBar.setHealth(p_CurHealth);
     }
 
     void Update()
@@ -39,7 +39,11 @@ public class PlayerHealth : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.space)) {
         //     DecreaseHealth(50);
         // }
+<<<<<<< HEAD
         DecreaseHealth(800);
+=======
+        // DecreaseHealth(600);
+>>>>>>> 5d512037d0f85a4c206827c43a6cde66a14bf34b
     }
 
 
@@ -55,11 +59,14 @@ public class PlayerHealth : MonoBehaviour
     #region Regeneration/Damage Response Methods
 
     public void DecreaseHealth(float amount) {
-        p_CurHealth = Mathf.Max(0, m_PlayerMaxHealth - amount);
+        p_CurHealth = Mathf.Max(0, p_CurHealth - amount);
         healthBar.setHealth(p_CurHealth);
+        Debug.Log(p_CurHealth);
         //rb.UpdateHealth(1.0f * p_CurHealth / m_PlayerMaxHealth); // After incorpotating UpdateHealth method
         if (p_CurHealth == 0) {
             //Signals Death & goes back to main menu (UI?)
+            Debug.Log("Player died");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 
