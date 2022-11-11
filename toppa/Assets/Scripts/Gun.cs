@@ -12,6 +12,7 @@ namespace HELLSLAYERCrosshairs
         public float settleSpeed;
         public float shotsPerSecond; //how fast this gun shoots
         private int index; // The index of bullets
+        private int magzineSize = 30;
         private int BulletSpeed = 800;
         public Camera playercamera;
 
@@ -20,6 +21,7 @@ namespace HELLSLAYERCrosshairs
         //used to set up how often the gun shoots as set in shotsPerSecond 
         float shotRate;
         float nextShotTime;
+        int ammo;
 
         void Start()
         {
@@ -30,19 +32,20 @@ namespace HELLSLAYERCrosshairs
             //set up the gunshooting speed in this script
             shotRate = 1.0f / shotsPerSecond;
             nextShotTime = 0f;
+            ammo = 0;
 
         }
 
-        void Update()
+        void FixedUpdate()
         {
-            if (Input.GetButton("Fire1")) // press the mouse1 / left control / controller button 1 to simulate shooting with the given recoil
-            //Input.GetKeyDown(KeyCode.Mouse0)
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // press the mouse1 / left control / controller button 1 to simulate shooting with the given recoil
+            //Input.GetButton("Fire1")
                 Shoot();
         }
 
         void Shoot() //shoot the gun based on the fire rate set by setting shotsPerSecond
         {
-            if (nextShotTime < Time.time) {
+            if (nextShotTime < Time.time && ammo <= magzineSize) {
                 // Fire the bullet
                 index++;
                 GameObject actualbullet = Instantiate(Bullet);
@@ -56,6 +59,8 @@ namespace HELLSLAYERCrosshairs
                 // Modify the Crosshair
                 crosshair.Expand(gunRecoil);
                 nextShotTime = Time.time + shotRate;
+                // Reduce left ammo
+                ammo = ammo + 1;
             }
 
         }
