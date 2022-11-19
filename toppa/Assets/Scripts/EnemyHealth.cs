@@ -20,13 +20,14 @@ public class EnemyHealth : MonoBehaviour
         private float p_CurHealth;
 
         #endregion
-
+        private KillMsg msg;
 
         // // The GameObject to be spawned
         // public GameObject go;
         // Start is called before the first frame update
         void Start()
         {
+            msg = GameObject.Find("Msg Manager").GetComponent<KillMsg>();
             //
         }
 
@@ -45,6 +46,8 @@ public class EnemyHealth : MonoBehaviour
             if (p_CurHealth == 0) {
                 //Enemy Death effects
                 Destroy(gameObject);
+                msg.ShowMsg("Enemy");
+                
             }
         }
         #endregion

@@ -38,13 +38,4 @@ public class KillMsg : MonoBehaviour
         hintmsg = "Slained: ";
     }
 
-    void FixedUpdate()
-    {
-        if (nextShowTime < Time.time)
-        {
-            ShowMsg("Cube");
-            nextShowTime = Time.time + 10f;
-        }
-        
-    }
 }
