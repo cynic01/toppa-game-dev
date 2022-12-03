@@ -25,7 +25,9 @@ public class BasicMovements :  MonoBehaviour
 
     CharacterController controller;
     Vector3 threeDimDirection;
-    public bool isGrounded = false;
+    public bool jumped = false;
+    float cur = 0f;
+    bool jumping = false;
 
     void Awake () {
         Debug.Log("Awaked");
@@ -71,21 +73,42 @@ public class BasicMovements :  MonoBehaviour
         camF = camF.normalized;
         camR = camR.normalized;
 
-        threeDimDirection = camF * p_verticalSpeedController + camR * p_horizontalSpeedController * m_speed * Time.deltaTime;
-        //Debug.Log("Is grounded?" + controller.isGrounded);
+        threeDimDirection = (camF * p_verticalSpeedController + camR * p_horizontalSpeedController) * m_speed * Time.deltaTime;
+        float jumpLimit = 4.5f;
         
-        //attempt to implement jump function. Not used yet.
-        Vector3 jumpAmount = Vector3.up * 5;
-        if(controller.isGrounded) {
-            height.y = 0;
-            isGrounded = true;
-        } else if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true) {
-            Rb.AddForce(0f, 40000f, 0f, ForceMode.Impulse);
-            isGrounded = false;
-            Debug.Log("jumped");
-        } else {
-            //threeDimDirection.y = Physics.gravity.y * Time.deltaTime;
+        
+
+        
+        if (controller.isGrounded && !Input.GetKeyDown(KeyCode.Space)) { //running on the ground
+            threeDimDirection.y = Physics.gravity.y;
+            jumped = false;
+        } 
+        if(Input.GetKeyDown(KeyCode.Space) && !jumped) { //jumping from the ground
+            jumped = true;
+            threeDimDirection.y += 0.1f;
+            cur += 0.1f;
+            //threeDimDirection.y = 1.2f;
+            jumping = true;
+            Debug.Log("state 2");
+        } 
+        if(jumping && cur <= jumpLimit) { //jumping but in the air
+            threeDimDirection.y += 0.4f;
+            cur += 0.4f;
+            jumping = true;
+            Debug.Log("state 3");
         }
+        if (cur > jumpLimit) { //reached the highest point
+            jumping = false;
+            cur = 0;
+            Debug.Log("state 4");
+        }
+        if (!controller.isGrounded && !jumping) { //falling
+            threeDimDirection.y += Physics.gravity.y/40;
+            jumped = true;
+            Debug.Log("state 5");
+        } 
+        
+        
 
         controller.Move(threeDimDirection);
         //transform.position += m_speed * Time.deltaTime * (camF * p_verticalSpeedController + camR * p_horizontalSpeedController);
