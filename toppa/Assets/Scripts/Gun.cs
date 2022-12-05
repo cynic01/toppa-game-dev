@@ -37,7 +37,7 @@ public class Gun : MonoBehaviour
 
         }
 
-        void FixedUpdate()
+        void Update()
         {
             if (Input.GetButton("Fire1")) {
                 Shoot();
