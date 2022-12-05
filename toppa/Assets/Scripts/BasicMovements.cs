@@ -42,11 +42,11 @@ public class BasicMovements :  MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
         //nothing need to be updated based on frame.
     }
 
-    void FixedUpdate () {
+    void Update () {
         
         //read the keyboard input of movement direction
         float p_verticalSpeedController = Input.GetAxis("Vertical");
@@ -74,7 +74,7 @@ public class BasicMovements :  MonoBehaviour
         camR = camR.normalized;
 
         threeDimDirection = (camF * p_verticalSpeedController + camR * p_horizontalSpeedController) * m_speed * Time.deltaTime;
-        float jumpLimit = 4.5f;
+        float jumpLimit = 5f;
         
         
 
@@ -92,8 +92,8 @@ public class BasicMovements :  MonoBehaviour
             Debug.Log("state 2");
         } 
         if(jumping && cur <= jumpLimit) { //jumping but in the air
-            threeDimDirection.y += 0.4f;
-            cur += 0.4f;
+            threeDimDirection.y += 0.2f;
+            cur += 0.2f;
             jumping = true;
             Debug.Log("state 3");
         }
@@ -103,7 +103,7 @@ public class BasicMovements :  MonoBehaviour
             Debug.Log("state 4");
         }
         if (!controller.isGrounded && !jumping) { //falling
-            threeDimDirection.y += Physics.gravity.y/40;
+            threeDimDirection.y += Physics.gravity.y * Time.deltaTime*1.5f;
             jumped = true;
             Debug.Log("state 5");
         } 
