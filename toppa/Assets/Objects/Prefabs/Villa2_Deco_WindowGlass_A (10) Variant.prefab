@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2381696555259060605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 174938, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_Name
+      value: Villa2_Deco_WindowGlass_A (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 529.997
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 507.457
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000000461936
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 6.8833828e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 475722, guid: 33d2396704f502c40bd674b135e08461, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000021855698
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33d2396704f502c40bd674b135e08461, type: 3}
